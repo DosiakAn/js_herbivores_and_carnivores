@@ -11,6 +11,14 @@ class Animal {
     Animal.alive.push(this);
   }
 
+  hide() {
+    this.hidden = true;
+  }
+
+  unhide() {
+    this.hidden = false;
+  }
+
   die() {
     Animal.alive = Animal.alive.filter((animal) => animal !== this);
   }
@@ -19,14 +27,6 @@ class Animal {
 class Herbivore extends Animal {
   constructor(name, health = 100, hidden = false) {
     super(name, health, hidden);
-  }
-
-  hide() {
-    this.hidden = true;
-  }
-
-  unhide() {
-    this.hidden = false;
   }
 }
 
